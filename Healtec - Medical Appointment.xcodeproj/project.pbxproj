@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		6E6741602F34E1A100EC472B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E6741412F34E1A000EC472B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E6741482F34E1A000EC472B;
+			remoteInfo = "Healtec - Medical Appointment";
+		};
+		6E67416A2F34E1A100EC472B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E6741412F34E1A000EC472B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E6741482F34E1A000EC472B;
+			remoteInfo = "Healtec - Medical Appointment";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E6741492F34E1A000EC472B /* Healtec - Medical Appointment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healtec - Medical Appointment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E67415F2F34E1A100EC472B /* Healtec - Medical AppointmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Healtec - Medical AppointmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6741692F34E1A100EC472B /* Healtec - Medical AppointmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Healtec - Medical AppointmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6E6741712F34E1A100EC472B /* Exceptions for "Healtec - Medical Appointment" folder in "Healtec - Medical Appointment" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6E6741482F34E1A000EC472B /* Healtec - Medical Appointment */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6E67414B2F34E1A000EC472B /* Healtec - Medical Appointment */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6E6741712F34E1A100EC472B /* Exceptions for "Healtec - Medical Appointment" folder in "Healtec - Medical Appointment" target */,
+			);
+			path = "Healtec - Medical Appointment";
+			sourceTree = "<group>";
+		};
+		6E6741622F34E1A100EC472B /* Healtec - Medical AppointmentTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Healtec - Medical AppointmentTests";
+			sourceTree = "<group>";
+		};
+		6E67416C2F34E1A100EC472B /* Healtec - Medical AppointmentUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Healtec - Medical AppointmentUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E6741462F34E1A000EC472B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E67415C2F34E1A100EC472B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E6741662F34E1A100EC472B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E6741402F34E1A000EC472B = {
+			isa = PBXGroup;
+			children = (
+				6E67414B2F34E1A000EC472B /* Healtec - Medical Appointment */,
+				6E6741622F34E1A100EC472B /* Healtec - Medical AppointmentTests */,
+				6E67416C2F34E1A100EC472B /* Healtec - Medical AppointmentUITests */,
+				6E67414A2F34E1A000EC472B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E67414A2F34E1A000EC472B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E6741492F34E1A000EC472B /* Healtec - Medical Appointment.app */,
+				6E67415F2F34E1A100EC472B /* Healtec - Medical AppointmentTests.xctest */,
+				6E6741692F34E1A100EC472B /* Healtec - Medical AppointmentUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E6741482F34E1A000EC472B /* Healtec - Medical Appointment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E6741722F34E1A100EC472B /* Build configuration list for PBXNativeTarget "Healtec - Medical Appointment" */;
+			buildPhases = (
+				6E6741452F34E1A000EC472B /* Sources */,
+				6E6741462F34E1A000EC472B /* Frameworks */,
+				6E6741472F34E1A000EC472B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6E67414B2F34E1A000EC472B /* Healtec - Medical Appointment */,
+			);
+			name = "Healtec - Medical Appointment";
+			packageProductDependencies = (
+			);
+			productName = "Healtec - Medical Appointment";
+			productReference = 6E6741492F34E1A000EC472B /* Healtec - Medical Appointment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E67415E2F34E1A100EC472B /* Healtec - Medical AppointmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E6741772F34E1A100EC472B /* Build configuration list for PBXNativeTarget "Healtec - Medical AppointmentTests" */;
+			buildPhases = (
+				6E67415B2F34E1A100EC472B /* Sources */,
+				6E67415C2F34E1A100EC472B /* Frameworks */,
+				6E67415D2F34E1A100EC472B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E6741612F34E1A100EC472B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6E6741622F34E1A100EC472B /* Healtec - Medical AppointmentTests */,
+			);
+			name = "Healtec - Medical AppointmentTests";
+			packageProductDependencies = (
+			);
+			productName = "Healtec - Medical AppointmentTests";
+			productReference = 6E67415F2F34E1A100EC472B /* Healtec - Medical AppointmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E6741682F34E1A100EC472B /* Healtec - Medical AppointmentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E67417A2F34E1A100EC472B /* Build configuration list for PBXNativeTarget "Healtec - Medical AppointmentUITests" */;
+			buildPhases = (
+				6E6741652F34E1A100EC472B /* Sources */,
+				6E6741662F34E1A100EC472B /* Frameworks */,
+				6E6741672F34E1A100EC472B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E67416B2F34E1A100EC472B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6E67416C2F34E1A100EC472B /* Healtec - Medical AppointmentUITests */,
+			);
+			name = "Healtec - Medical AppointmentUITests";
+			packageProductDependencies = (
+			);
+			productName = "Healtec - Medical AppointmentUITests";
+			productReference = 6E6741692F34E1A100EC472B /* Healtec - Medical AppointmentUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E6741412F34E1A000EC472B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					6E6741482F34E1A000EC472B = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					6E67415E2F34E1A100EC472B = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 6E6741482F34E1A000EC472B;
+					};
+					6E6741682F34E1A100EC472B = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 6E6741482F34E1A000EC472B;
+					};
+				};
+			};
+			buildConfigurationList = 6E6741442F34E1A000EC472B /* Build configuration list for PBXProject "Healtec - Medical Appointment" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E6741402F34E1A000EC472B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6E67414A2F34E1A000EC472B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E6741482F34E1A000EC472B /* Healtec - Medical Appointment */,
+				6E67415E2F34E1A100EC472B /* Healtec - Medical AppointmentTests */,
+				6E6741682F34E1A100EC472B /* Healtec - Medical AppointmentUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E6741472F34E1A000EC472B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E67415D2F34E1A100EC472B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E6741672F34E1A100EC472B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E6741452F34E1A000EC472B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E67415B2F34E1A100EC472B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E6741652F34E1A100EC472B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E6741612F34E1A100EC472B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E6741482F34E1A000EC472B /* Healtec - Medical Appointment */;
+			targetProxy = 6E6741602F34E1A100EC472B /* PBXContainerItemProxy */;
+		};
+		6E67416B2F34E1A100EC472B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E6741482F34E1A000EC472B /* Healtec - Medical Appointment */;
+			targetProxy = 6E67416A2F34E1A100EC472B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6E6741732F34E1A100EC472B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Healtec - Medical Appointment/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Healtec.Healtec---Medical-Appointment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E6741742F34E1A100EC472B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Healtec - Medical Appointment/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Healtec.Healtec---Medical-Appointment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6E6741752F34E1A100EC472B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6E6741762F34E1A100EC472B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E6741782F34E1A100EC472B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Healtec.Healtec---Medical-AppointmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Healtec - Medical Appointment.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Healtec - Medical Appointment";
+			};
+			name = Debug;
+		};
+		6E6741792F34E1A100EC472B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Healtec.Healtec---Medical-AppointmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Healtec - Medical Appointment.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Healtec - Medical Appointment";
+			};
+			name = Release;
+		};
+		6E67417B2F34E1A100EC472B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Healtec.Healtec---Medical-AppointmentUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Healtec - Medical Appointment";
+			};
+			name = Debug;
+		};
+		6E67417C2F34E1A100EC472B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6MHTJQG7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Healtec.Healtec---Medical-AppointmentUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Healtec - Medical Appointment";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E6741442F34E1A000EC472B /* Build configuration list for PBXProject "Healtec - Medical Appointment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E6741752F34E1A100EC472B /* Debug */,
+				6E6741762F34E1A100EC472B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E6741722F34E1A100EC472B /* Build configuration list for PBXNativeTarget "Healtec - Medical Appointment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E6741732F34E1A100EC472B /* Debug */,
+				6E6741742F34E1A100EC472B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E6741772F34E1A100EC472B /* Build configuration list for PBXNativeTarget "Healtec - Medical AppointmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E6741782F34E1A100EC472B /* Debug */,
+				6E6741792F34E1A100EC472B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E67417A2F34E1A100EC472B /* Build configuration list for PBXNativeTarget "Healtec - Medical AppointmentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E67417B2F34E1A100EC472B /* Debug */,
+				6E67417C2F34E1A100EC472B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E6741412F34E1A000EC472B /* Project object */;
+}
