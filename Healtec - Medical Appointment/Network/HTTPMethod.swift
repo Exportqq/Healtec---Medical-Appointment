@@ -1,0 +1,7 @@
+enum HTTPMethod: String {
+    case GET
+    case POST
+    case PATCH
+    case PUT
+    case DELETE
+}
