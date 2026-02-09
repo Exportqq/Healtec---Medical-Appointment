@@ -64,6 +64,11 @@ class Auth: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc private func successLogin() {
+        let vc = MainTabBarController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
@@ -96,8 +101,12 @@ class Auth: UIViewController {
                         username: self.authUsername.text ?? "",
                         password: self.authPassord.text ?? "",
                     )
+                    
+                    self.successLogin()
                     self.token = auth.token
                     print("Успешно", auth.token)
+                    
+                    
                 } catch {
                     print("Ошибка авторизации")
                 }

@@ -31,17 +31,6 @@ class ProfileItems: UIView {
         setupConstrains()
     }
     
-    private func loadProfile(token: String) {
-        Task {
-            do {
-                let profile = try await AuthService.shared.getProfile(token: token)
-                profileName.text = profile.username
-            } catch {
-                print("Ошибка загрузки профиля")
-            }
-        }
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -20,14 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        let rootVC = Register()
+        
+        let rootVC = Register()  
         let nav = UINavigationController(rootViewController: rootVC)
-
-        window.rootViewController = MainTabBarController()
+        
+        window.rootViewController = nav
         window.makeKeyAndVisible()
-
+        
         self.window = window
     }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
