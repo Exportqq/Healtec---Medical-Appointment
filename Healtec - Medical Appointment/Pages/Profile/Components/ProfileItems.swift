@@ -12,7 +12,6 @@ class ProfileItems: UIView {
     
     private let profileName: UILabel = {
         let label = UILabel()
-        label.text = "John Doe"
         label.font = UIFont(name: "Inter-SemiBold", size: 20)
         return label
     }()
@@ -30,6 +29,17 @@ class ProfileItems: UIView {
         super.init(frame: frame)
         setupUI()
         setupConstrains()
+    }
+    
+    private func loadProfile(token: String) {
+        Task {
+            do {
+                let profile = try await AuthService.shared.getProfile(token: token)
+                profileName.text = profile.username
+            } catch {
+                print("Ошибка загрузки профиля")
+            }
+        }
     }
     
     required init?(coder: NSCoder) {

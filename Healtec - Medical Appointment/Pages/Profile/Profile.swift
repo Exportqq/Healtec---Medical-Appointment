@@ -25,6 +25,8 @@ class Profile: UIViewController {
         super.viewDidLoad()
         SetupView()
         SetupConstraints()
+        
+        teleportLogin(token: AuthService.shared.getProfile(token: token))
     }
     
     private func SetupView() {
@@ -34,6 +36,13 @@ class Profile: UIViewController {
         backgorund.addSubview(backgroundTexture)
         backgorund.addSubview(profileItems)
     }
+    
+    func teleportLogin(token: String) {
+        if token.isEmpty {
+            NavigationHelper.push(from: self, to: Auth())
+        }
+    }
+
     
     private func SetupConstraints() {
         [backgorund, backgroundTexture, profileItems].forEach{
