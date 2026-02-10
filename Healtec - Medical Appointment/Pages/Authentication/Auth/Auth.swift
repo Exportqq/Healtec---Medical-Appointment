@@ -103,7 +103,7 @@ class Auth: UIViewController {
                     )
                     
                     self.successLogin()
-                    self.token = auth.token
+                    KeychainService.shared.saveToken(auth.token)
                     print("Успешно", auth.token)
                     
                     

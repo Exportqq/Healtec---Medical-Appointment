@@ -53,7 +53,6 @@ class Profile: UIViewController {
         
         logoutBtn.configure(title: "Logout") {
             AuthService.shared.logout()
-            print("click", TokenStorage.shared.token)
             SceneManager.shared.showAuth()
         }
     }
