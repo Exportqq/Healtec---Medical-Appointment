@@ -4,9 +4,8 @@ final class CustomTabBar: UIView {
 
     var onSelect: ((Int) -> Void)?
 
-    private let indicator = UIView()
     private var buttons: [UIButton] = []
-    private var indicatorLeading: NSLayoutConstraint!
+    private var selectedIndex: Int = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,45 +19,45 @@ final class CustomTabBar: UIView {
     private func setupUI() {
         backgroundColor = .white
 
-        let homeBtn = makeButton(image: "house.fill", tag: 0)
-        let profileBtn = makeButton(image: "person", tag: 1)
+        let homeBtn = makeButton(image: "home_icon", tag: 0)
+        let profileBtn = makeButton(image: "profile_icon", tag: 1)
 
         buttons = [homeBtn, profileBtn]
 
         let stack = UIStackView(arrangedSubviews: buttons)
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
+        stack.alignment = .center
+        stack.distribution = .equalSpacing
+        stack.spacing = 80
         stack.translatesAutoresizingMaskIntoConstraints = false
+        
 
         addSubview(stack)
-        addSubview(indicator)
-
-        indicator.backgroundColor = .black
-        indicator.layer.cornerRadius = 2
-        indicator.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            stack.centerXAnchor.constraint(equalTo: centerXAnchor),
             stack.topAnchor.constraint(equalTo: topAnchor),
-            stack.leftAnchor.constraint(equalTo: leftAnchor),
-            stack.rightAnchor.constraint(equalTo: rightAnchor),
-            stack.heightAnchor.constraint(equalToConstant: 56),
-
-            indicator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
-            indicator.widthAnchor.constraint(equalToConstant: 24),
-            indicator.heightAnchor.constraint(equalToConstant: 4)
+            stack.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-
-        indicatorLeading = indicator.leftAnchor.constraint(equalTo: leftAnchor, constant: frame.width / 4 - 12)
-        indicatorLeading.isActive = true
 
         select(index: 0)
     }
 
     private func makeButton(image: String, tag: Int) -> UIButton {
         let btn = UIButton(type: .system)
-        btn.setImage(UIImage(systemName: image), for: .normal)
+        btn.setImage(
+            UIImage(named: image)?.withRenderingMode(.alwaysTemplate),
+            for: .normal
+        )
         btn.tintColor = .lightGray
         btn.tag = tag
+
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btn.widthAnchor.constraint(equalToConstant: 32),
+            btn.heightAnchor.constraint(equalToConstant: 32)
+        ])
+
         btn.addTarget(self, action: #selector(tap(_:)), for: .touchUpInside)
         return btn
     }
@@ -69,15 +68,10 @@ final class CustomTabBar: UIView {
     }
 
     func select(index: Int) {
+        selectedIndex = index
+
         for (i, btn) in buttons.enumerated() {
             btn.tintColor = i == index ? .systemIndigo : .lightGray
-        }
-
-        let itemWidth = frame.width / CGFloat(buttons.count)
-        indicatorLeading.constant = itemWidth * CGFloat(index) + itemWidth / 2 - 12
-
-        UIView.animate(withDuration: 0.25) {
-            self.layoutIfNeeded()
         }
     }
 }

@@ -21,11 +21,27 @@ class Profile: UIViewController {
     
     let profileItems = ProfileItems()
     
+    let logoutBtn = CustomDeleteBtn()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
         SetupConstraints()
         
+        loadProfile()
+    }
+    
+    private func loadProfile() {
+        Task {
+            do {
+                let profile = try await AuthService.shared.getProfile()
+                await MainActor.run {
+                    self.profileItems.configure(username: profile.username)
+                }
+            } catch {
+                print("Ошибка загрузки профиля:", error)
+            }
+        }
     }
     
     private func SetupView() {
@@ -33,10 +49,17 @@ class Profile: UIViewController {
         view.addSubview(backgorund)
         backgorund.addSubview(backgroundTexture)
         backgorund.addSubview(profileItems)
+        view.addSubview(logoutBtn)
+        
+        logoutBtn.configure(title: "Logout") {
+            AuthService.shared.logout()
+            print("click", TokenStorage.shared.token)
+            SceneManager.shared.showAuth()
+        }
     }
     
     private func SetupConstraints() {
-        [backgorund, backgroundTexture, profileItems].forEach{
+        [backgorund, backgroundTexture, profileItems, logoutBtn].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -50,7 +73,12 @@ class Profile: UIViewController {
             backgroundTexture.centerXAnchor.constraint(equalTo: backgorund.centerXAnchor),
             
             profileItems.centerXAnchor.constraint(equalTo: backgorund.centerXAnchor),
-            profileItems.centerYAnchor.constraint(equalTo: backgorund.safeAreaLayoutGuide.centerYAnchor)
+            profileItems.centerYAnchor.constraint(equalTo: backgorund.safeAreaLayoutGuide.centerYAnchor),
+            
+            logoutBtn.topAnchor.constraint(equalTo: backgorund.bottomAnchor, constant: 14),
+            logoutBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoutBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            logoutBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
         ])
     }
 }

@@ -12,7 +12,8 @@ class ProfileItems: UIView {
     
     private let profileName: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Inter-SemiBold", size: 20)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 24)
+        label.textColor = .white
         return label
     }()
     
@@ -29,6 +30,10 @@ class ProfileItems: UIView {
         super.init(frame: frame)
         setupUI()
         setupConstrains()
+    }
+    
+    func configure(username: String) {
+        profileName.text = username
     }
     
     required init?(coder: NSCoder) {

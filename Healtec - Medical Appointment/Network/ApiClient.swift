@@ -39,6 +39,14 @@ final class ApiClient {
         guard let http = response as? HTTPURLResponse else {
             throw APIError.unknown
         }
+        
+        if http.statusCode == 401 {
+            DispatchQueue.main.async {
+                SessionManager.shared.logout()
+                SceneManager.shared.showAuth()
+            }
+            throw APIError.server(401)
+        }
 
         guard (200...299).contains(http.statusCode) else {
             throw APIError.server(http.statusCode)

@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import UIKit
 
 final class MainTabBarController: UITabBarController {
@@ -10,6 +26,8 @@ final class MainTabBarController: UITabBarController {
         tabBar.isHidden = true
         setupTabs()
         setupCustomTabBar()
+        
+        customTabBar.backgroundColor = .white
     }
 
     private func setupTabs() {
@@ -29,13 +47,19 @@ final class MainTabBarController: UITabBarController {
         NSLayoutConstraint.activate([
             customTabBar.leftAnchor.constraint(equalTo: view.leftAnchor),
             customTabBar.rightAnchor.constraint(equalTo: view.rightAnchor),
-            customTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            customTabBar.heightAnchor.constraint(equalToConstant: 70)
+            customTabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            customTabBar.heightAnchor.constraint(equalToConstant: 90)
         ])
+
+        customTabBar.layer.shadowColor = UIColor(red: 151/255, green: 151/255, blue: 150/255, alpha: 1).cgColor
+        customTabBar.layer.shadowOpacity = 0.14
+        customTabBar.layer.shadowOffset = CGSize(width: 0, height: -5)
+        customTabBar.layer.shadowRadius = 15
 
         customTabBar.onSelect = { [weak self] index in
             self?.selectedIndex = index
         }
     }
+
 }
 

@@ -17,16 +17,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        
-        let rootVC = Register()  
+
+        let rootVC: UIViewController
+
+        if SessionManager.shared.isAuthorized {
+            rootVC = MainTabBarController()
+        } else {
+            rootVC = Auth()
+        }
+
         let nav = UINavigationController(rootViewController: rootVC)
-        
+        nav.navigationBar.isHidden = true
+
         window.rootViewController = nav
         window.makeKeyAndVisible()
-        
+
         self.window = window
     }
 
