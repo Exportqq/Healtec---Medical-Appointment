@@ -20,6 +20,14 @@ final class PaddedTextField: UITextField {
     private func setup() {
         layer.borderWidth = 0
         layer.borderColor = inactiveBorderColor
+        layer.cornerRadius = 10
+        backgroundColor = .fillGrey
+        textColor = .textGrey
+        font = UIFont(name: "Poppins-Medium", size: 16)
+    }
+
+    func configure(placeholder: String) {
+        self.placeholder = placeholder
     }
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {

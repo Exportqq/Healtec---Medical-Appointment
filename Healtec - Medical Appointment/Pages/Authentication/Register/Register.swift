@@ -26,37 +26,13 @@ class RegisterVC: UIViewController {
         return label
     }()
     
-    private let regUsername: UITextField = {
-        let textField = PaddedTextField()
-        textField.font = UIFont(name: "Poppins-Medium", size: 16)
-        textField.placeholder = "Username"
-        textField.layer.cornerRadius = 10
-        textField.backgroundColor = .fillGrey
-        textField.textColor = .textGrey
-        return textField
-    }()
+    private let regUsername = PaddedTextField()
     
-    private let regPassord: UITextField = {
-        let textField = PaddedTextField()
-        textField.font = UIFont(name: "Poppins-Medium", size: 16)
-        textField.placeholder = "Password"
-        textField.layer.cornerRadius = 10
-        textField.backgroundColor = .fillGrey
-        textField.textColor = .textGrey
-        return textField
-    }()
+    private let regPassord = PaddedTextField()
     
-    private let regRepeatPassord: UITextField = {
-        let textField = PaddedTextField()
-        textField.font = UIFont(name: "Poppins-Medium", size: 16)
-        textField.placeholder = "Confirm Password"
-        textField.layer.cornerRadius = 10
-        textField.backgroundColor = .fillGrey
-        textField.textColor = .textGrey
-        return textField
-    }()
+    private let regRepeatPassord = PaddedTextField()
     
-    let regButton = CustomBtnView()
+    private let regButton = CustomBtnView()
     
     private let nextAuthStageBtn: UIButton = {
         let button = UIButton()
@@ -69,8 +45,8 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SetupView()
-        SetupConstraints()
+        setupView()
+        setupConstraints()
         setupActions()
     }
     
@@ -78,22 +54,23 @@ class RegisterVC: UIViewController {
         NavigationHelper.pop(from: self)
     }
     
-    private func SetupView() {
+    private func setupView() {
         view.backgroundColor = .white
         navigationItem.hidesBackButton = true
         
-        view.addSubview(regBackground)
-        view.addSubview(regTitle)
-        view.addSubview(regUsername)
-        view.addSubview(regPassord)
-        view.addSubview(regRepeatPassord)
-        view.addSubview(regTxt)
-        view.addSubview(regButton)
-        view.addSubview(nextAuthStageBtn)
+        [regBackground, regTitle, regUsername, regPassord, regRepeatPassord, regTxt, regButton , nextAuthStageBtn].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
+       
     }
     
     private func setupActions() {
         nextAuthStageBtn.addTarget(self, action: #selector(getNextStage), for: .primaryActionTriggered)
+        
+        regUsername.configure(placeholder: "Username")
+        regPassord.configure(placeholder: "Password")
+        regRepeatPassord.configure(placeholder: "Confirm Password")
         
         regButton.configure(title: "Sign up") {
             print("click")
@@ -114,7 +91,7 @@ class RegisterVC: UIViewController {
         }
     }
     
-    private func SetupConstraints() {
+    private func setupConstraints() {
         [regBackground, regTitle, regTxt, regUsername, regPassord, regRepeatPassord, regButton, nextAuthStageBtn].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }

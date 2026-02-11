@@ -26,25 +26,9 @@ class AuthVC: UIViewController {
         return label
     }()
     
-    private let authUsername: UITextField = {
-        let textField = PaddedTextField()
-        textField.font = UIFont(name: "Poppins-Medium", size: 16)
-        textField.placeholder = "Username"
-        textField.layer.cornerRadius = 10
-        textField.backgroundColor = .fillGrey
-        textField.textColor = .textGrey
-        return textField
-    }()
+    private let authUsername = PaddedTextField()
     
-    private let authPassord: UITextField = {
-        let textField = PaddedTextField()
-        textField.font = UIFont(name: "Poppins-Medium", size: 16)
-        textField.placeholder = "Password"
-        textField.layer.cornerRadius = 10
-        textField.backgroundColor = .fillGrey
-        textField.textColor = .textGrey
-        return textField
-    }()
+    private let authPassord = PaddedTextField()
     
     private let authButton = CustomBtnView()
     
@@ -86,6 +70,9 @@ class AuthVC: UIViewController {
     
     private func setupActions() {
         nextAuthStageBtn.addTarget(self, action: #selector(getNextStage), for: .primaryActionTriggered)
+        
+        authUsername.configure(placeholder: "Username")
+        authPassord.configure(placeholder: "Password")
         
         authButton.configure(title: "Sign in") {
             print("click")

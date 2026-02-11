@@ -2,7 +2,7 @@ import UIKit
 
 class CustomBtnView: UIView {
     
-    private let CustomBtn: UIButton = {
+    private let сustomBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
@@ -23,9 +23,9 @@ class CustomBtnView: UIView {
     }
 
     func configure(title: String, nextPage: @escaping () -> Void) {
-        CustomBtn.setTitle(title, for: .normal)
+        сustomBtn.setTitle(title, for: .normal)
         nextPageAction = nextPage
-        CustomBtn.addTarget(self, action: #selector(getNextPage), for: .touchUpInside)
+        сustomBtn.addTarget(self, action: #selector(getNextPage), for: .touchUpInside)
     }
 
     
@@ -34,21 +34,21 @@ class CustomBtnView: UIView {
     }
     
     private func setupUI() {
-        addSubview(CustomBtn)
+        addSubview(сustomBtn)
     }
     
     
     private func setupConstrains() {
-        [CustomBtn].forEach {
+        [сustomBtn].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
         NSLayoutConstraint.activate([
-            CustomBtn.topAnchor.constraint(equalTo: self.topAnchor),
-            CustomBtn.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            CustomBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            CustomBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            CustomBtn.heightAnchor.constraint(equalToConstant: 60),
+            сustomBtn.topAnchor.constraint(equalTo: self.topAnchor),
+            сustomBtn.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            сustomBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            сustomBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            сustomBtn.heightAnchor.constraint(equalToConstant: 60),
 
         ])
     }

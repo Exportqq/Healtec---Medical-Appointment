@@ -6,9 +6,9 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
-        SetupConstraints()
+        setupConstraints()
         
-        SetupOptions()
+        setupOptions()
     }
     
     private func SetupView() {
@@ -16,11 +16,11 @@ class MainVC: UIViewController {
         view.addSubview(testCard)
     }
     
-    private func SetupOptions() {
+    private func setupOptions() {
         testCard.doctorInfo.configure(name: "Dr. John", speciality: "Dentist", raiting: 5.0)
     }
     
-    private func SetupConstraints() {
+    private func setupConstraints() {
         [testCard].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
