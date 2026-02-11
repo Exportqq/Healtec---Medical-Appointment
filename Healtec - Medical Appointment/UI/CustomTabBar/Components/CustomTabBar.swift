@@ -1,6 +1,6 @@
 import UIKit
 
-final class CustomTabBar: UIView {
+final class CustomTabBarView: UIView {
 
     var onSelect: ((Int) -> Void)?
 

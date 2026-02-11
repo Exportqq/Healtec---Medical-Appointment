@@ -10,7 +10,7 @@ final class SceneManager {
             .first { $0.activationState == .foregroundActive } as! UIWindowScene
         let window = scene.windows.first!
 
-        let nav = UINavigationController(rootViewController: Auth())
+        let nav = UINavigationController(rootViewController: AuthVC())
         nav.navigationBar.isHidden = true
 
         window.rootViewController = nav

@@ -13,7 +13,7 @@ final class ApiClient {
 
     func request<T: Decodable>(
         _ endpoint: String,
-        method: HTTPMethod = .GET,
+        method: HTTPMethod = .get,
         body: Encodable? = nil,
         token: String? = nil
     ) async throws -> T {

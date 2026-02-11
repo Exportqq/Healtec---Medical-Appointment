@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomBtn: UIView {
+class CustomBtnView: UIView {
     
     private let CustomBtn: UIButton = {
         let button = UIButton()

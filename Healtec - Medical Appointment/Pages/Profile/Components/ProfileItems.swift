@@ -1,6 +1,6 @@
 import UIKit
 
-class ProfileItems: UIView {
+class ProfileItemsView: UIView {
     
     private let profileImage: UIImageView = {
         let imageView = UIImageView()

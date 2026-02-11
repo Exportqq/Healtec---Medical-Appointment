@@ -1,7 +1,7 @@
 import UIKit
 
-class Main: UIViewController {
-    private let testCard = DoctorCardUI()
+class MainVC: UIViewController {
+    private let testCard = DoctorCardUIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

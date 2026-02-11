@@ -1,6 +1,6 @@
 import UIKit
 
-class DoctorInfo: UIView {
+class DoctorInfoView: UIView {
     
     let doctorName: UILabel = {
         let lbl = UILabel()

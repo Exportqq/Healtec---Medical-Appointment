@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomDeleteBtn: UIView {
+class CustomDeleteBtnView: UIView {
     
     private let CustomBtn: UIButton = {
         let button = UIButton()

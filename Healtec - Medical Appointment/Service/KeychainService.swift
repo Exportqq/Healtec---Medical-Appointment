@@ -9,7 +9,6 @@ final class KeychainService {
     private let service = "com.healtec.auth"
     private let account = "accessToken"
 
-    // MARK: - Save token
     func saveToken(_ token: String) {
         let data = Data(token.utf8)
 
@@ -32,7 +31,6 @@ final class KeychainService {
         SecItemAdd(attributes as CFDictionary, nil)
     }
 
-    // MARK: - Get token
     func getToken() -> String? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -53,7 +51,6 @@ final class KeychainService {
         return String(decoding: data, as: UTF8.self)
     }
 
-    // MARK: - Delete token
     func deleteToken() {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,

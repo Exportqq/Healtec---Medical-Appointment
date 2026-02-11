@@ -1,6 +1,6 @@
 import UIKit
 
-class DoctorCardUI: UIView {
+class DoctorCardUIView: UIView {
     
     let doctorImage: UIImageView = {
         let img = UIImageView()
@@ -21,14 +21,7 @@ class DoctorCardUI: UIView {
         return view
     }()
     
-    let doctorInfo = DoctorInfo()
-    
-    let doctorName: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Dr. John"
-        lbl.font = UIFont(name: "Inter-Medium", size: 14)
-        return lbl
-    }()
+    let doctorInfo = DoctorInfoView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

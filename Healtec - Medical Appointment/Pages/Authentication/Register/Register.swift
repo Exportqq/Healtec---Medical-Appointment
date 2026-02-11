@@ -1,6 +1,6 @@
 import UIKit
 
-class Register: UIViewController {
+class RegisterVC: UIViewController {
     private let regBackground: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
@@ -56,7 +56,7 @@ class Register: UIViewController {
         return textField
     }()
     
-    let regButton = CustomBtn()
+    let regButton = CustomBtnView()
     
     private let nextAuthStageBtn: UIButton = {
         let button = UIButton()
@@ -67,16 +67,16 @@ class Register: UIViewController {
         return button
     }()
     
-    @objc private func getNextStage() {
-        let vc = Auth()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
         SetupConstraints()
         setupActions()
+    }
+    
+    @objc private func getNextStage() {
+        let vc = AuthVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func SetupView() {

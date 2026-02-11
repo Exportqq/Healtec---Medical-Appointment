@@ -7,7 +7,6 @@ final class AuthService {
 
     private let baseURL = "https://healtec.onrender.com"
 
-    // MARK: - Register
     func register(
         username: String,
         password: String,
@@ -22,7 +21,7 @@ final class AuthService {
 
         let response: AuthResponse = try await ApiClient.shared.request(
             "\(baseURL)/auth/register",
-            method: .POST,
+            method: .post,
             body: body
         )
 
@@ -30,14 +29,13 @@ final class AuthService {
         return response
     }
 
-    // MARK: - Login
     func login(username: String, password: String) async throws -> AuthResponse {
 
         let body = LoginRequest(username: username, password: password)
 
         let response: AuthResponse = try await ApiClient.shared.request(
             "\(baseURL)/auth/login",
-            method: .POST,
+            method: .post,
             body: body
         )
 
@@ -45,7 +43,6 @@ final class AuthService {
         return response
     }
 
-    // MARK: - Profile
     func getProfile() async throws -> UserProfile {
         guard let token = KeychainService.shared.getToken() else {
             throw URLError(.userAuthenticationRequired)
@@ -53,13 +50,12 @@ final class AuthService {
 
         return try await ApiClient.shared.request(
             "\(baseURL)/me",
-            method: .GET,
+            method: .get,
             body: nil,
             token: token
         )
     }
 
-    // MARK: - Logout
     func logout() {
         KeychainService.shared.deleteToken()
     }

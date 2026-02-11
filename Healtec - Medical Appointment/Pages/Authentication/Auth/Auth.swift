@@ -1,6 +1,6 @@
 import UIKit
 
-class Auth: UIViewController {
+class AuthVC: UIViewController {
     private let authBackground: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
@@ -46,7 +46,7 @@ class Auth: UIViewController {
         return textField
     }()
     
-    let authButton = CustomBtn()
+    let authButton = CustomBtnView()
     
     private let nextAuthStageBtn: UIButton = {
         let button = UIButton()
@@ -60,7 +60,7 @@ class Auth: UIViewController {
     private var token: String?
     
     @objc private func getNextStage() {
-        let vc = Register()
+        let vc = RegisterVC()
         navigationController?.pushViewController(vc, animated: true)
     }
     

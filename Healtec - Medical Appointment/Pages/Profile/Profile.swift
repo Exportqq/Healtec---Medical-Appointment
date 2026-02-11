@@ -1,6 +1,6 @@
 import UIKit
 
-class Profile: UIViewController {
+class ProfileVC: UIViewController {
     private let backgorund: UIView = {
         let view = UIView()
         view.backgroundColor = .borderClr
@@ -19,9 +19,9 @@ class Profile: UIViewController {
         return imageView
     }()
     
-    let profileItems = ProfileItems()
+    let profileItems = ProfileItemsView()
     
-    let logoutBtn = CustomDeleteBtn()
+    let logoutBtn = CustomDeleteBtnView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

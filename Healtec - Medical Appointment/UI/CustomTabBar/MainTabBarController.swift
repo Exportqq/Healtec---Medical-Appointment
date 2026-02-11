@@ -2,7 +2,7 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
 
-    private let customTabBar = CustomTabBar()
+    private let customTabBar = CustomTabBarView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +15,8 @@ final class MainTabBarController: UITabBarController {
     }
 
     private func setupTabs() {
-        let catalog = Main()
-        let profile = Profile()
+        let catalog = MainVC()
+        let profile = ProfileVC()
 
         viewControllers = [
             catalog,
