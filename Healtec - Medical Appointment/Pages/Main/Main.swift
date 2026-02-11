@@ -1,32 +1,35 @@
 import UIKit
 
 class Main: UIViewController {
-    private let test: UILabel = {
-        let label = UILabel()
-        label.text = "test"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        return label
-    }()
+    private let testCard = DoctorCardUI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
         SetupConstraints()
+        
+        SetupOptions()
     }
     
     private func SetupView() {
         view.backgroundColor = .white
-        
-        view.addSubview(test)
+        view.addSubview(testCard)
+    }
+    
+    private func SetupOptions() {
+        testCard.doctorInfo.configure(name: "Dr. John", speciality: "Dentist", raiting: 5.0)
     }
     
     private func SetupConstraints() {
-        [test].forEach{
+        [testCard].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
         NSLayoutConstraint.activate([
+            testCard.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            testCard.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            testCard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            testCard.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             
         ])
     }
