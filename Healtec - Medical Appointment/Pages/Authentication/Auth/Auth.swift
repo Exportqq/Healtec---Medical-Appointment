@@ -46,7 +46,7 @@ class AuthVC: UIViewController {
         return textField
     }()
     
-    let authButton = CustomBtnView()
+    private let authButton = CustomBtnView()
     
     private let nextAuthStageBtn: UIButton = {
         let button = UIButton()
@@ -59,34 +59,29 @@ class AuthVC: UIViewController {
     
     private var token: String?
     
-    @objc private func getNextStage() {
-        let vc = RegisterVC()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc private func successLogin() {
-        let vc = MainTabBarController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        SetupView()
-        SetupConstraints()
+        setupView()
+        setupConstraints()
         setupActions()
     }
     
-    private func SetupView() {
+    @objc private func getNextStage() {
+        NavigationHelper.push(RegisterVC(), from: self)
+    }
+    
+    @objc private func successLogin() {
+        NavigationHelper.push(MainTabBarController(), from: self)
+    }
+    
+    private func setupView() {
         view.backgroundColor = .white
         navigationItem.hidesBackButton = true
         
-        view.addSubview(authBackground)
-        view.addSubview(authTitle)
-        view.addSubview(authUsername)
-        view.addSubview(authPassord)
-        view.addSubview(authTxt)
-        view.addSubview(authButton)
-        view.addSubview(nextAuthStageBtn)
+        [authBackground, authTitle, authUsername, authPassord, authTxt, authButton, nextAuthStageBtn].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
     }
     
     private func setupActions() {
@@ -114,9 +109,7 @@ class AuthVC: UIViewController {
         }
     }
     
-    private func SetupConstraints() {
-        
-
+    private func setupConstraints() {
         
         [authBackground, authTitle, authTxt, authUsername, authPassord, authButton, nextAuthStageBtn].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false

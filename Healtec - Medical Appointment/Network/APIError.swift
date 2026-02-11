@@ -3,4 +3,5 @@ enum APIError: Error {
     case server(Int)
     case decoding
     case unknown
+    case unauthorized
 }

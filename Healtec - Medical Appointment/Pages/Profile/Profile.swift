@@ -40,6 +40,8 @@ class ProfileVC: UIViewController {
                 }
             } catch {
                 print("Ошибка загрузки профиля:", error)
+                SessionManager.shared.logout()
+                NavigationHelper.push(AuthVC(), from: self)
             }
         }
     }
@@ -53,7 +55,7 @@ class ProfileVC: UIViewController {
         
         logoutBtn.configure(title: "Logout") {
             AuthService.shared.logout()
-            SceneManager.shared.showAuth()
+            NavigationHelper.push(AuthVC(), from: self)
         }
     }
     

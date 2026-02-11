@@ -75,8 +75,7 @@ class RegisterVC: UIViewController {
     }
     
     @objc private func getNextStage() {
-        let vc = AuthVC()
-        navigationController?.pushViewController(vc, animated: true)
+        NavigationHelper.pop(from: self)
     }
     
     private func SetupView() {

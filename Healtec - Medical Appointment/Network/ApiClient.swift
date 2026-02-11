@@ -41,11 +41,7 @@ final class ApiClient {
         }
         
         if http.statusCode == 401 {
-            DispatchQueue.main.async {
-                SessionManager.shared.logout()
-                SceneManager.shared.showAuth()
-            }
-            throw APIError.server(401)
+            throw APIError.unauthorized
         }
 
         guard (200...299).contains(http.statusCode) else {
