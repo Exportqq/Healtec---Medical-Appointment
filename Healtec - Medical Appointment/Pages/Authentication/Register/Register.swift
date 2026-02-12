@@ -50,6 +50,10 @@ class RegisterVC: UIViewController {
         setupActions()
     }
     
+    deinit {
+      print("registration did init")
+    }
+    
     @objc private func getNextStage() {
         NavigationHelper.pop(from: self)
     }
@@ -72,7 +76,9 @@ class RegisterVC: UIViewController {
         regPassord.configure(placeholder: "Password")
         regRepeatPassord.configure(placeholder: "Confirm Password")
         
-        regButton.configure(title: "Sign up") {
+        regButton.configure(title: "Sign up") { [weak self] in
+            guard let self else { return }
+            
             print("click")
             
             Task {

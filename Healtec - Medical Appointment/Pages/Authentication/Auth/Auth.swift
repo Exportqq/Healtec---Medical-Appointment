@@ -68,6 +68,10 @@ class AuthVC: UIViewController {
         }
     }
     
+    deinit {
+      print("auth did init")
+    }
+    
     private func setupActions() {
         nextAuthStageBtn.addTarget(self, action: #selector(getNextStage), for: .primaryActionTriggered)
         
