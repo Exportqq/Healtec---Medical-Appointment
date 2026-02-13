@@ -55,8 +55,12 @@ class DoctorCardUIView: UIView {
             doctorInfoView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             doctorInfoView.heightAnchor.constraint(equalToConstant: 59),
             
-            
+            doctorInfo.topAnchor.constraint(equalTo: doctorInfoView.topAnchor),
+            doctorInfo.leadingAnchor.constraint(equalTo: doctorInfoView.leadingAnchor),
+            doctorInfo.trailingAnchor.constraint(equalTo: doctorInfoView.trailingAnchor),
+            doctorInfo.bottomAnchor.constraint(equalTo: doctorInfoView.bottomAnchor),
         ])
     }
+
 }
 

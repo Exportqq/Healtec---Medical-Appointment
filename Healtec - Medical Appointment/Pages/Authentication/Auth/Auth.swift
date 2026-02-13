@@ -78,7 +78,9 @@ class AuthVC: UIViewController {
         authUsername.configure(placeholder: "Username")
         authPassord.configure(placeholder: "Password")
         
-        authButton.configure(title: "Sign in") {
+        authButton.configure(title: "Sign in") { [weak self] in
+            guard let self else { return }
+            
             print("click")
             
             Task {

@@ -53,10 +53,16 @@ class ProfileVC: UIViewController {
         backgorund.addSubview(profileItems)
         view.addSubview(logoutBtn)
         
-        logoutBtn.configure(title: "Logout") {
+        logoutBtn.configure(title: "Logout") { [weak self] in
+            guard let self else { return }
+            
             AuthService.shared.logout()
             NavigationHelper.push(AuthVC(), from: self)
         }
+    }
+    
+    deinit {
+        print("Profile closed")
     }
     
     private func SetupConstraints() {

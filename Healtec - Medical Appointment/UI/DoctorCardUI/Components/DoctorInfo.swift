@@ -48,14 +48,15 @@ class DoctorInfoView: UIView {
         return stack
     }()
     
-    private lazy var doctorInfoStack: UIStackView = {
+    private lazy var mainStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [doctorNameStack, doctorRaitingStack])
         stack.axis = .horizontal
-        stack.spacing = 0
+        stack.spacing = 8
         stack.distribution = .equalSpacing
         stack.alignment = .top
         return stack
     }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,25 +75,23 @@ class DoctorInfoView: UIView {
     }
     
     private func setupUI() {
-        addSubview(doctorInfoStack)
+        addSubview(mainStack)
     }
     
     private func setupConstrains() {
-        [doctorInfoStack].forEach {
+        [mainStack].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        addSubview(mainStack)
+        mainStack.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            starIcon.heightAnchor.constraint(equalToConstant: 16),
-            starIcon.widthAnchor.constraint(equalToConstant: 16),
-            
-            doctorNameStack.widthAnchor.constraint(equalToConstant: 81),
-            doctorRaitingStack.widthAnchor.constraint(equalToConstant: 44),
-            
-            doctorInfoStack.topAnchor.constraint(equalTo: self.topAnchor),
-            doctorInfoStack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            doctorInfoStack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            mainStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            mainStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            mainStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
+
 
     }
 }
