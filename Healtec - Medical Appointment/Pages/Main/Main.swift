@@ -22,7 +22,7 @@ class FavoriteDoctors: UIViewController {
         
         NSLayoutConstraint.activate([
             doctors.topAnchor.constraint(equalTo: view.topAnchor),
-            doctors.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            doctors.bottomAnchor.constraint(equalTo: view.bottomAnchor), //  constant: -90 скрыть таббар
             doctors.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             doctors.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])

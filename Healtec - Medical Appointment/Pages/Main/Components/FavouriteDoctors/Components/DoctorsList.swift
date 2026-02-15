@@ -6,8 +6,8 @@ final class DoctorsListCV: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 72, height: 198)
-        layout.minimumLineSpacing = 10
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
+        layout.minimumLineSpacing = 15
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
@@ -36,10 +36,10 @@ final class DoctorsListCV: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 150),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
         ])
     }
     
