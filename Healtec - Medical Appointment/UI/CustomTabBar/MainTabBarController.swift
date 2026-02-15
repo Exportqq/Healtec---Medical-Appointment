@@ -15,7 +15,7 @@ final class MainTabBarController: UITabBarController {
     }
 
     private func setupTabs() {
-        let catalog = MainVC()
+        let catalog = FavoriteDoctors()
         let profile = ProfileVC()
 
         viewControllers = [
