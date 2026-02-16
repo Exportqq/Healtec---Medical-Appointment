@@ -1,30 +1,30 @@
 import UIKit
 
-final class DoctorsListView: UIView {
+final class DoctorsListCV: UIView {
     
     private var doctors: [DoctorsModel] = []
     
-    private let collectionView: UICollectionView
-    
-    override init(frame: CGRect) {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
         layout.minimumLineSpacing = 15
         
-        self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .white
+        cv.dataSource = self
+        cv.register(DoctorsCell.self, forCellWithReuseIdentifier: "ProductCardCell")
+        cv.showsVerticalScrollIndicator = false
+        cv.showsHorizontalScrollIndicator = false
+        return cv
+    }()
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         fetchDoctors()
     }
     
     required init?(coder: NSCoder) {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
-        layout.minimumLineSpacing = 15
-        
-        self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
         super.init(coder: coder)
         setupView()
         fetchDoctors()
@@ -32,31 +32,23 @@ final class DoctorsListView: UIView {
     
     private func setupView() {
         backgroundColor = .white
-        
-        collectionView.backgroundColor = .white
-        collectionView.dataSource = self
-        collectionView.register(DoctorsCell.self, forCellWithReuseIdentifier: "DoctorsCell")
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
         ])
     }
     
     private func fetchDoctors() {
         Task {
             do {
-                let result = try await DoctorsService().getDoctors()
-                self.doctors = result
-                
-                await MainActor.run {
+                let doctor = try await DoctorsService().getDoctors()
+                self.doctors = doctor
+                DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
             } catch {
@@ -66,18 +58,16 @@ final class DoctorsListView: UIView {
     }
 }
 
-extension DoctorsListView: UICollectionViewDataSource {
+extension DoctorsListCV: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         doctors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "DoctorsCell",
-            for: indexPath
-        ) as! DoctorsCell
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCardCell", for: indexPath) as? DoctorsCell else {
+            return UICollectionViewCell()
+        }
         cell.configure(with: doctors[indexPath.item])
         return cell
     }

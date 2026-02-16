@@ -1,13 +1,12 @@
 import UIKit
 
-final class DoctorsListCV: UIView {
+final class DoctorsListFavouriteCV: UIView {
     
     private var doctors: [DoctorsModel] = []
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
-        layout.minimumLineSpacing = 15
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
@@ -38,8 +37,8 @@ final class DoctorsListCV: UIView {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
     }
     
@@ -58,10 +57,10 @@ final class DoctorsListCV: UIView {
     }
 }
 
-extension DoctorsListCV: UICollectionViewDataSource {
+extension DoctorsListFavouriteCV: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        doctors.count
+        return min(doctors.count, 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
