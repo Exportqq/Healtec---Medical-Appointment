@@ -21,6 +21,8 @@ class ProfileMainView: UIView {
         super.init(frame: frame)
         setupView()
         setupConstraints()
+        
+        loadProfile()
     }
     
     
@@ -36,6 +38,19 @@ class ProfileMainView: UIView {
         backgorund.addSubview(profileItemsMain)
     }
     
+    private func loadProfile() {
+        Task {
+            do {
+                let profile = try await AuthService.shared.getProfile()
+                await MainActor.run {
+                    self.profileItemsMain.configure(username: profile.username)
+                }
+            } catch {
+                print("Ошибка загрузки профиля:", error)
+            }
+        }
+    }
+    
     private func setupConstraints() {
         [backgorund, backgroundTexture].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +62,7 @@ class ProfileMainView: UIView {
             backgorund.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgorund.heightAnchor.constraint(equalToConstant: 220),
             
-            profileItemsMain.topAnchor.constraint(equalTo: backgorund.topAnchor, constant: 70),
+            profileItemsMain.topAnchor.constraint(equalTo: backgorund.topAnchor),
             profileItemsMain.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             
             backgroundTexture.topAnchor.constraint(equalTo: backgorund.topAnchor),
