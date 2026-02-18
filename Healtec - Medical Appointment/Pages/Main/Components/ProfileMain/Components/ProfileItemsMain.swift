@@ -12,12 +12,14 @@ class ProfileItemsMainView: UIView {
         let lbl = UILabel()
         lbl.text = "Hello, Welcome  🎉"
         lbl.font = UIFont(name: "Inter-Regular", size: 14)
+        lbl.textColor = .white
         return lbl
     }()
     
     private let profileMainName: UILabel = {
        let lbl = UILabel()
         lbl.font = UIFont(name: "Inter-SemiBold", size: 20)
+        lbl.textColor = .white
         return lbl
     }()
     

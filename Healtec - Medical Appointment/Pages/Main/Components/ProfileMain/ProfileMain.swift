@@ -17,6 +17,8 @@ class ProfileMainView: UIView {
     
     private let profileItemsMain = ProfileItemsMainView()
     
+    private let searchBar = SearchBarUI()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -36,6 +38,7 @@ class ProfileMainView: UIView {
         addSubview(backgorund)
         backgorund.addSubview(backgroundTexture)
         backgorund.addSubview(profileItemsMain)
+        backgorund.addSubview(searchBar)
     }
     
     private func loadProfile() {
@@ -52,7 +55,7 @@ class ProfileMainView: UIView {
     }
     
     private func setupConstraints() {
-        [backgorund, backgroundTexture].forEach {
+        [backgorund, backgroundTexture, profileItemsMain, searchBar].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -64,7 +67,12 @@ class ProfileMainView: UIView {
             
             profileItemsMain.topAnchor.constraint(equalTo: backgorund.topAnchor),
             profileItemsMain.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            profileItemsMain.heightAnchor.constraint(equalToConstant: 51),
             
+            searchBar.bottomAnchor.constraint(equalTo: backgorund.bottomAnchor, constant: -24),
+            searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
+            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -25),
+
             backgroundTexture.topAnchor.constraint(equalTo: backgorund.topAnchor),
             backgroundTexture.centerXAnchor.constraint(equalTo: backgorund.centerXAnchor),
             
