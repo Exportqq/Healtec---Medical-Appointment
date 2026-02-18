@@ -14,9 +14,11 @@ class DoctorDetail: UIViewController {
         view.addSubview(doctorInfo)
     }
     
-    func configure(image: UIImage?, name: String ) {
+    func configure(image: UIImage?, name: String, speciality: String, raiting: String, reviews: String) {
         doctorInfo.docImage.image = image
         doctorInfo.docName.text = name
+        doctorInfo.docSpeciality.text = speciality
+        doctorInfo.docRaiting.text = "\(raiting) + ' ' \(reviews) + 'reviews'"
     }
     
     private func SetupConstraints() {
