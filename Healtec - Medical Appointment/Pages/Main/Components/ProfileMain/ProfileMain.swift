@@ -72,6 +72,7 @@ class ProfileMainView: UIView {
             searchBar.bottomAnchor.constraint(equalTo: backgorund.bottomAnchor, constant: -24),
             searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
             searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -25),
+            searchBar.heightAnchor.constraint(equalToConstant: 53),
 
             backgroundTexture.topAnchor.constraint(equalTo: backgorund.topAnchor),
             backgroundTexture.centerXAnchor.constraint(equalTo: backgorund.centerXAnchor),
