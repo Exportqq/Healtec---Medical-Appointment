@@ -70,4 +70,17 @@ extension DoctorsListFavouriteCV: UICollectionViewDataSource {
         cell.configure(with: doctors[indexPath.item])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedItem = doctors[indexPath.item]
+        let title = selectedItem.name
+        let image = selectedItem.photo ?? ""
+        
+        let vc = DoctorDetail()
+        vc.configure(image: image)
+        NavigationHelper.push(vc, from: self)
+
+    }
 }
+
+
