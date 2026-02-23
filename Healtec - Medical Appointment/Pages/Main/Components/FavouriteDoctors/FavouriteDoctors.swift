@@ -2,6 +2,8 @@ import UIKit
 
 final class DoctorsListFavouriteCV: UIView {
     
+    var onDoctorSelected: ((DoctorsModel) -> Void)?
+    
     private var doctors: [DoctorsModel] = []
     
     private lazy var collectionView: UICollectionView = {
@@ -11,6 +13,7 @@ final class DoctorsListFavouriteCV: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
         cv.dataSource = self
+        cv.delegate = self
         cv.register(DoctorsCell.self, forCellWithReuseIdentifier: "ProductCardCell")
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
@@ -70,17 +73,15 @@ extension DoctorsListFavouriteCV: UICollectionViewDataSource {
         cell.configure(with: doctors[indexPath.item])
         return cell
     }
+}
+
+extension DoctorsListFavouriteCV: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedItem = doctors[indexPath.item]
-        let title = selectedItem.name
-        let image = selectedItem.photo ?? ""
-        
-        let vc = DoctorDetail()
-        vc.configure(image: image)
-        NavigationHelper.push(vc, from: self)
-
+        let selectedDoctor = doctors[indexPath.item]
+        onDoctorSelected?(selectedDoctor)
     }
 }
+
 
 

@@ -36,6 +36,7 @@ class FavoriteDoctors: UIViewController {
         SetupView()
         SetupConstraints()
         setupActions()
+        setupDoctorSelection()
     }
     
     private func SetupView() {
@@ -52,6 +53,23 @@ class FavoriteDoctors: UIViewController {
             from: self,
             style: .pageSheet
         )
+    }
+    
+    private func setupDoctorSelection() {
+        doctors.onDoctorSelected = { [weak self] doctor in
+            guard let self = self else { return }
+
+            let vc = DoctorDetail()
+            vc.configure(
+                image: UIImage(named: doctor.photo ?? ""),
+                name: doctor.name,
+                speciality: doctor.specialty,
+                raiting: doctor.rating,
+                reviews: doctor.reviewsCount
+            )
+
+            NavigationHelper.push(vc, from: self)
+        }
     }
     
     private func setupActions() {
