@@ -82,10 +82,7 @@ class DoctorInfoView: UIView {
         [mainStack].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
-        
-        addSubview(mainStack)
-        mainStack.translatesAutoresizingMaskIntoConstraints = false
-        
+                
         NSLayoutConstraint.activate([
             mainStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             mainStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),

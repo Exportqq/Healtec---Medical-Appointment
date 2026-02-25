@@ -44,7 +44,7 @@ class DoctorInfoDetail: UIView {
     let docRaiting: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont(name: "Inter-Medium", size: 12)
-        lbl.textColor = .textBlack
+        lbl.textColor = .textGrey
         return lbl
     }()
     
@@ -93,17 +93,19 @@ class DoctorInfoDetail: UIView {
         }
         
         NSLayoutConstraint.activate([
-            docImage.topAnchor.constraint(equalTo: self.topAnchor),
-            docImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            docImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            docImage.topAnchor.constraint(equalTo: topAnchor),
+            docImage.leadingAnchor.constraint(equalTo: leadingAnchor),
+            docImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             docImage.heightAnchor.constraint(equalToConstant: 247),
-            
+
             doctorInfoView.topAnchor.constraint(equalTo: docImage.bottomAnchor),
-            doctorInfoView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            doctorInfoView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            doctorInfoView.trailingAnchor.constraint(equalTo: trailingAnchor),
             doctorInfoView.heightAnchor.constraint(equalToConstant: 82),
-            
+
             stackMain.centerYAnchor.constraint(equalTo: doctorInfoView.centerYAnchor),
-            stackMain.centerXAnchor.constraint(equalTo: doctorInfoView.centerXAnchor)
+            stackMain.leadingAnchor.constraint(equalTo: doctorInfoView.leadingAnchor, constant: 20),
+            stackMain.trailingAnchor.constraint(equalTo: doctorInfoView.trailingAnchor, constant: -20)
         ])
     }
 }

@@ -60,12 +60,17 @@ class FavoriteDoctors: UIViewController {
             guard let self = self else { return }
 
             let vc = DoctorDetail()
+            
             vc.configure(
                 image: UIImage(named: doctor.photo ?? ""),
                 name: doctor.name,
                 speciality: doctor.specialty,
                 raiting: doctor.rating,
-                reviews: doctor.reviewsCount
+                reviews: doctor.reviewsCount,
+                
+                iconStats: "patients",
+                valueStats: doctor.patientsCount,
+                titleStats: "Patients"
             )
 
             NavigationHelper.push(vc, from: self)
