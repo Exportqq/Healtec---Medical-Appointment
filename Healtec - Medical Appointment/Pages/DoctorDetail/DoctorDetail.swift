@@ -5,6 +5,15 @@ class DoctorDetail: UIViewController {
     
     private let doctorStats = DoctorStatsView()
     
+    private let doctorDecription = DoctorDecriptionView()
+    
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [doctorInfo, doctorStats, doctorDecription])
+        stackView.axis = .vertical
+        stackView.spacing = 24
+        return stackView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
@@ -13,39 +22,57 @@ class DoctorDetail: UIViewController {
     
     private func SetupView() {
         view.backgroundColor = .white
-        view.addSubview(doctorInfo)
-        view.addSubview(doctorStats)
+        view.addSubview(mainStackView)
+    
     }
     
-    func configure(image: UIImage?, name: String, speciality: String, raiting: Double, reviews: String, iconStats: String, valueStats: String, titleStats: String) {
+    func configure( image: UIImage?, name: String, speciality: String, raiting: Double, reviews: String, patientsCount: String, experience: String, description: String
+    ) {
         doctorInfo.docImage.image = image
         doctorInfo.docName.text = name
         doctorInfo.docSpeciality.text = speciality
         doctorInfo.docRaiting.text = "\(raiting) (\(reviews) reviews)"
+        doctorDecription.infoTxt.text = description
         
-        doctorStats.patients.configure(icon: iconStats, value: valueStats, title: titleStats)
-        doctorStats.exp.configure(icon: iconStats, value: valueStats, title: titleStats)
-        doctorStats.rating.configure(icon: iconStats, value: valueStats, title: titleStats)
-        doctorStats.reviews.configure(icon: iconStats, value: valueStats, title: titleStats)
-
+        doctorStats.patients.configure(
+            icon: "patients",
+            value: patientsCount,
+            title: "Patients"
+        )
+        
+        doctorStats.exp.configure(
+            icon: "exp",
+            value: experience,
+            title: "Years Exp"
+        )
+        
+        doctorStats.rating.configure(
+            icon: "rating",
+            value: "\(raiting)",
+            title: "Rating"
+        )
+        
+        doctorStats.reviews.configure(
+            icon: "reviews",
+            value: reviews,
+            title: "Reviews"
+        )
     }
 
     private func SetupConstraints() {
-        [doctorInfo, doctorStats].forEach {
+        [mainStackView, doctorInfo, doctorStats, doctorDecription].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
         
         NSLayoutConstraint.activate([
-            doctorInfo.topAnchor.constraint(equalTo: view.topAnchor),
             doctorInfo.heightAnchor.constraint(equalToConstant: 329),
-            doctorInfo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            doctorInfo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            
-            doctorStats.topAnchor.constraint(equalTo: doctorInfo.bottomAnchor, constant: 27),
             doctorStats.heightAnchor.constraint(equalToConstant: 94),
-            doctorStats.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            doctorStats.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            doctorDecription.heightAnchor.constraint(equalToConstant: 68),
+
+            mainStackView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
         ])
     }
 }

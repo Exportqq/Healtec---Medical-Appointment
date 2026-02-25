@@ -67,10 +67,9 @@ class FavoriteDoctors: UIViewController {
                 speciality: doctor.specialty,
                 raiting: doctor.rating,
                 reviews: doctor.reviewsCount,
-                
-                iconStats: "patients",
-                valueStats: doctor.patientsCount,
-                titleStats: "Patients"
+                patientsCount: doctor.patientsCount,
+                experience: doctor.experience,
+                description: doctor.description
             )
 
             NavigationHelper.push(vc, from: self)
