@@ -36,7 +36,7 @@ final class DoctorsListCV: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 50),
             collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)

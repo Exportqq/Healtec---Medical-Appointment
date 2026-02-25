@@ -5,7 +5,7 @@ class DoctorCardUIView: UIView {
     let doctorImage: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(named: "docc")
-        img.contentMode = .scaleAspectFill
+        img.contentMode = .scaleToFill
         return img
     }()
     

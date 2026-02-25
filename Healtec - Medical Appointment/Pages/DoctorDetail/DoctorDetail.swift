@@ -1,7 +1,8 @@
 import UIKit
+import Kingfisher
 
 class DoctorDetail: UIViewController {
-    private let doctorInfo = DoctorInfoDetail()
+    private var doctorInfo = DoctorInfoDetail()
     
     private let doctorStats = DoctorStatsView()
     
@@ -28,6 +29,8 @@ class DoctorDetail: UIViewController {
     
     func configure( image: UIImage?, name: String, speciality: String, raiting: Double, reviews: String, patientsCount: String, experience: String, description: String
     ) {
+        
+        
         doctorInfo.docImage.image = image
         doctorInfo.docName.text = name
         doctorInfo.docSpeciality.text = speciality
@@ -70,7 +73,7 @@ class DoctorDetail: UIViewController {
             doctorStats.heightAnchor.constraint(equalToConstant: 94),
             doctorDecription.heightAnchor.constraint(equalToConstant: 68),
 
-            mainStackView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
         ])

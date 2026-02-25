@@ -62,7 +62,7 @@ class FavoriteDoctors: UIViewController {
             let vc = DoctorDetail()
             
             vc.configure(
-                image: UIImage(named: doctor.photo ?? ""),
+                image: doctor.image,
                 name: doctor.name,
                 speciality: doctor.specialty,
                 raiting: doctor.rating,

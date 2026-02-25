@@ -26,13 +26,4 @@ final class DoctorsCell: UICollectionViewCell {
     }
 }
 
-//let id: Int
-//let name: String
-//let specialty: String
-//let rating: Double
-//let photo: String
-//let experience: String
-//let patientsCount: String
-//let reviewsCount: String
-//let description: String
-//let diseases: [String]
+
