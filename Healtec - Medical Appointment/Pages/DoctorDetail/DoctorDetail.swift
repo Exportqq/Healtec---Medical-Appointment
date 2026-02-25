@@ -24,6 +24,10 @@ class DoctorDetail: UIViewController {
         doctorInfo.docRaiting.text = "\(raiting) (\(reviews) reviews)"
         
         doctorStats.patients.configure(icon: iconStats, value: valueStats, title: titleStats)
+        doctorStats.exp.configure(icon: iconStats, value: valueStats, title: titleStats)
+        doctorStats.rating.configure(icon: iconStats, value: valueStats, title: titleStats)
+        doctorStats.reviews.configure(icon: iconStats, value: valueStats, title: titleStats)
+
     }
 
     private func SetupConstraints() {
@@ -40,8 +44,8 @@ class DoctorDetail: UIViewController {
             
             doctorStats.topAnchor.constraint(equalTo: doctorInfo.bottomAnchor, constant: 27),
             doctorStats.heightAnchor.constraint(equalToConstant: 94),
-            doctorStats.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            doctorStats.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            doctorStats.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            doctorStats.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
         ])
     }
 }

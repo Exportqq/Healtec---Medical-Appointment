@@ -7,6 +7,15 @@ class DoctorStatsView: UIView {
     let rating = StatItemViewUI()
     let reviews = StatItemViewUI()
     
+    private lazy var stackInfo: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [patients, exp, rating, reviews])
+        stack.axis = .horizontal
+        stack.spacing = 16
+        stack.distribution = .fillEqually
+        stack.alignment = .center
+        return stack
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -18,7 +27,7 @@ class DoctorStatsView: UIView {
     }
     
     private func setupUI() {
-        addSubview(patients)
+        addSubview(stackInfo)
     }
     
     func configure(icon: String, value: String, title: String) {
@@ -47,16 +56,18 @@ class DoctorStatsView: UIView {
             )
         }
     
+    
+    
     private func setupConstrains() {
-        [patients].forEach {
+        [stackInfo] .forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
         NSLayoutConstraint.activate([
-            patients.topAnchor.constraint(equalTo: self.topAnchor),
-            patients.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            patients.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            patients.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            stackInfo.topAnchor.constraint(equalTo: self.topAnchor),
+            stackInfo.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackInfo.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackInfo.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }

@@ -26,6 +26,7 @@ final class StatItemViewUI: UIView {
         let lbl = UILabel()
         lbl.font = UIFont(name: "Inter-Light", size: 12)
         lbl.textColor = .textGrey
+        lbl.textAlignment = .center
         return lbl
     }()
     
@@ -33,6 +34,7 @@ final class StatItemViewUI: UIView {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
