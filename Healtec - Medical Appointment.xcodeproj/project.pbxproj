@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6E75AE562F4F6740006BC484 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6E75AE552F4F6740006BC484 /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6E6741602F34E1A100EC472B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E75AE562F4F6740006BC484 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,7 @@
 				6E67414B2F34E1A000EC472B /* Healtec - Medical Appointment */,
 				6E6741622F34E1A100EC472B /* Healtec - Medical AppointmentTests */,
 				6E67416C2F34E1A100EC472B /* Healtec - Medical AppointmentUITests */,
+				6E9C6CE92F4F66800058EECF /* Frameworks */,
 				6E67414A2F34E1A000EC472B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +109,13 @@
 				6E6741692F34E1A100EC472B /* Healtec - Medical AppointmentUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6E9C6CE92F4F66800058EECF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +138,7 @@
 			);
 			name = "Healtec - Medical Appointment";
 			packageProductDependencies = (
+				6E75AE552F4F6740006BC484 /* Kingfisher */,
 			);
 			productName = "Healtec - Medical Appointment";
 			productReference = 6E6741492F34E1A000EC472B /* Healtec - Medical Appointment.app */;
@@ -208,6 +222,9 @@
 			);
 			mainGroup = 6E6741402F34E1A000EC472B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6E75AE542F4F6740006BC484 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6E67414A2F34E1A000EC472B /* Products */;
 			projectDirPath = "";
@@ -591,6 +608,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E75AE542F4F6740006BC484 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E75AE552F4F6740006BC484 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E75AE542F4F6740006BC484 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E6741412F34E1A000EC472B /* Project object */;
 }
