@@ -56,6 +56,8 @@ class FavoriteDoctors: UIViewController {
     
     private let doctors = DoctorsListFavouriteCV()
     
+    private let topDoctors = DoctorsListTopCV()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
@@ -70,6 +72,7 @@ class FavoriteDoctors: UIViewController {
         view.addSubview(mainStack)
         view.addSubview(mainStackTopDoctors)
         view.addSubview(doctors)
+        view.addSubview(topDoctors)
         view.addSubview(profileMain)
     }
     
@@ -100,6 +103,25 @@ class FavoriteDoctors: UIViewController {
             
             NavigationHelper.push(vc, from: self)
         }
+        
+        topDoctors.onDoctorSelected = { [weak self] doctor in
+            guard let self = self else { return }
+
+            let vc = DoctorDetail()
+            
+            vc.configure(
+                image: doctor.image,
+                name: doctor.name,
+                speciality: doctor.specialty,
+                raiting: doctor.rating,
+                reviews: doctor.reviewsCount,
+                patientsCount: doctor.patientsCount,
+                experience: doctor.experience,
+                description: doctor.description
+            )
+            
+            NavigationHelper.push(vc, from: self)
+        }
     }
     
     private func setupActions() {
@@ -107,7 +129,7 @@ class FavoriteDoctors: UIViewController {
     }
     
     private func SetupConstraints() {
-        [profileMain, doctors, mainStack, mainStackTopDoctors].forEach{
+        [profileMain, doctors, topDoctors, mainStack, mainStackTopDoctors].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -131,6 +153,11 @@ class FavoriteDoctors: UIViewController {
             mainStackTopDoctors.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             mainStackTopDoctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             mainStackTopDoctors.heightAnchor.constraint(equalToConstant: 24),
+            
+            topDoctors.topAnchor.constraint(equalTo: mainStackTopDoctors.bottomAnchor, constant: 16),
+            topDoctors.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            topDoctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            topDoctors.heightAnchor.constraint(equalToConstant: 108),
         ])
     }
 }

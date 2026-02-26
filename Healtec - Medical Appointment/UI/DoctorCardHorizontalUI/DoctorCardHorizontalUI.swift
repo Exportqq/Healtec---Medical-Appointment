@@ -56,7 +56,7 @@ class DoctorCardHorizontalUIView: UIView {
             doctorImageView.widthAnchor.constraint(equalToConstant: 92),
             
             doctorInfo.centerYAnchor.constraint(equalTo: doctorInfoView.centerYAnchor),
-            doctorInfo.trailingAnchor.constraint(equalTo: doctorInfoView.trailingAnchor, constant: -8),
+            doctorInfo.trailingAnchor.constraint(equalTo: doctorInfoView.trailingAnchor, constant: -8)
         ])
     }
 
