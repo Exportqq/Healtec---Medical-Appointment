@@ -80,7 +80,7 @@ class ProfileVC: UIViewController {
             backgroundTexture.centerXAnchor.constraint(equalTo: backgorund.centerXAnchor),
             
             profileItems.centerXAnchor.constraint(equalTo: backgorund.centerXAnchor),
-            profileItems.centerYAnchor.constraint(equalTo: backgorund.safeAreaLayoutGuide.centerYAnchor),
+            profileItems.centerYAnchor.constraint(equalTo: backgorund.safeAreaLayoutGuide.centerYAnchor, constant: -20),
             
             logoutBtn.topAnchor.constraint(equalTo: backgorund.bottomAnchor, constant: 14),
             logoutBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
