@@ -8,7 +8,7 @@ class DoctorDetail: UIViewController {
     
     private let doctorDecription = DoctorDecriptionView()
     
-    private let showShareBtn = ShareButtonUI(text: "поделиться")
+    private let showShareBtn = ShareButtonUI(text: "Share", icon: UIImage(named: "share"))
     
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [doctorInfo, doctorStats, doctorDecription])
