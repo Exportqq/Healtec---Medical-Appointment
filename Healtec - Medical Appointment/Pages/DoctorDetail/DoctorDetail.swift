@@ -19,6 +19,9 @@ class DoctorDetail: UIViewController {
         super.viewDidLoad()
         SetupView()
         SetupConstraints()
+        
+        title = "Doctor"
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func SetupView() {
@@ -63,7 +66,7 @@ class DoctorDetail: UIViewController {
     }
 
     private func SetupConstraints() {
-        [mainStackView, doctorInfo, doctorStats, doctorDecription].forEach {
+        [mainStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -73,7 +76,7 @@ class DoctorDetail: UIViewController {
             doctorStats.heightAnchor.constraint(equalToConstant: 94),
             doctorDecription.heightAnchor.constraint(equalToConstant: 68),
 
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 59),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
         ])

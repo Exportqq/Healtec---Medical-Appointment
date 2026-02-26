@@ -71,7 +71,7 @@ class FavoriteDoctors: UIViewController {
                 experience: doctor.experience,
                 description: doctor.description
             )
-
+            
             NavigationHelper.push(vc, from: self)
         }
     }

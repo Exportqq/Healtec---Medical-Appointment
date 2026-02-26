@@ -4,7 +4,7 @@ class DoctorInfoDetail: UIView {
     
     let docImage: UIImageView = {
         let img = UIImageView()
-        img.contentMode = .scaleAspectFit
+        img.contentMode = .scaleAspectFill
         return img
     }()
     

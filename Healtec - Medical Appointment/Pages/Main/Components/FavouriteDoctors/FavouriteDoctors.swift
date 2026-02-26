@@ -63,7 +63,7 @@ final class DoctorsListFavouriteCV: UIView {
 extension DoctorsListFavouriteCV: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return min(doctors.count, 4)
+        return min(doctors.count, 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
