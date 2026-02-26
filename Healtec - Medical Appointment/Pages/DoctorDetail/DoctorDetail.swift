@@ -8,6 +8,8 @@ class DoctorDetail: UIViewController {
     
     private let doctorDecription = DoctorDecriptionView()
     
+    private let showShareBtn = ShareButtonUI(text: "поделиться")
+    
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [doctorInfo, doctorStats, doctorDecription])
         stackView.axis = .vertical
@@ -20,6 +22,9 @@ class DoctorDetail: UIViewController {
         SetupView()
         SetupConstraints()
         
+        showShareBtn.shareText = "Привет! Смотри это!"
+        showShareBtn.shareURL = URL(string: "https://example.com")
+        
         title = "Doctor"
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -27,7 +32,7 @@ class DoctorDetail: UIViewController {
     private func SetupView() {
         view.backgroundColor = .white
         view.addSubview(mainStackView)
-    
+        view.addSubview(showShareBtn)
     }
     
     func configure( image: UIImage?, name: String, speciality: String, raiting: Double, reviews: String, patientsCount: String, experience: String, description: String
@@ -66,7 +71,7 @@ class DoctorDetail: UIViewController {
     }
 
     private func SetupConstraints() {
-        [mainStackView].forEach {
+        [mainStackView, showShareBtn].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -74,11 +79,15 @@ class DoctorDetail: UIViewController {
         NSLayoutConstraint.activate([
             doctorInfo.heightAnchor.constraint(equalToConstant: 329),
             doctorStats.heightAnchor.constraint(equalToConstant: 94),
-            doctorDecription.heightAnchor.constraint(equalToConstant: 68),
 
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 59),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            
+            showShareBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
+            showShareBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            showShareBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            showShareBtn.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
 }
