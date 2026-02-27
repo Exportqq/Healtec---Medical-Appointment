@@ -87,9 +87,10 @@ class DoctorInfoHorizontalView: UIView {
             starIcon.heightAnchor.constraint(equalToConstant: 18),
             starIcon.widthAnchor.constraint(equalToConstant: 18),
             
+            mainStack.topAnchor.constraint(equalTo: self.topAnchor),
             mainStack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            mainStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            mainStack.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
 
 

@@ -157,7 +157,7 @@ class FavoriteDoctors: UIViewController {
             topDoctors.topAnchor.constraint(equalTo: mainStackTopDoctors.bottomAnchor, constant: 16),
             topDoctors.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             topDoctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            topDoctors.heightAnchor.constraint(equalToConstant: 108),
+            topDoctors.heightAnchor.constraint(equalToConstant: 228),
         ])
     }
 }

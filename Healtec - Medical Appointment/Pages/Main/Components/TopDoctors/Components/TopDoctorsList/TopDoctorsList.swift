@@ -1,13 +1,15 @@
 import UIKit
 
-final class TopDoctorsListCV: UIView {
+final class TopDoctorsListCV: UIView, UICollectionViewDataSource {
     
     private var topDoctors: [DoctorsModel] = []
+    private var topDoctorsWithFiveStars: [DoctorsModel] = []
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 50, height: 108)
-        layout.minimumLineSpacing = 15
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 90, height: 120)
+        layout.minimumLineSpacing = 12
+        layout.scrollDirection = .horizontal
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
@@ -15,6 +17,8 @@ final class TopDoctorsListCV: UIView {
         cv.register(TopDoctorsCell.self, forCellWithReuseIdentifier: "TopDoctorsCell")
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
+        cv.alwaysBounceHorizontal = true
+        cv.clipsToBounds = false
         return cv
     }()
     
@@ -31,23 +35,23 @@ final class TopDoctorsListCV: UIView {
     }
     
     private func setupView() {
-        backgroundColor = .white
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
+            collectionView.heightAnchor.constraint(equalToConstant: 130)
         ])
     }
     
     private func fetchDoctors() {
         Task {
             do {
-                let doctor = try await DoctorsService().getDoctors()
-                self.topDoctors = doctor
+                let doctors = try await DoctorsService().getDoctors()
+                self.topDoctors = doctors
+                self.topDoctorsWithFiveStars = doctors.filter { $0.rating == 5.0 }
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -56,19 +60,16 @@ final class TopDoctorsListCV: UIView {
             }
         }
     }
-}
-
-extension TopDoctorsListCV: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        topDoctors.count
+        topDoctorsWithFiveStars.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopDoctorsCell", for: indexPath) as? TopDoctorsCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: topDoctors[indexPath.item])
+        cell.configure(with: topDoctorsWithFiveStars[indexPath.item])
         return cell
     }
 }

@@ -10,7 +10,8 @@ class DoctorCardHorizontalUIView: UIView {
         view.layer.shadowOffset = CGSize(width: 0, height: -5)
         view.layer.shadowRadius = 15
         view.layer.cornerRadius = 12
-        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        view.clipsToBounds = false
+        view.layer.masksToBounds = false
         return view
     }()
     
@@ -41,12 +42,12 @@ class DoctorCardHorizontalUIView: UIView {
     }
     
     private func setupConstrains() {
-        [doctorInfoView, doctorImageView].forEach {
+        [doctorInfoView, doctorImageView, doctorInfo].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
         NSLayoutConstraint.activate([
-            doctorInfoView.topAnchor.constraint(equalTo: self.bottomAnchor),
+            doctorInfoView.topAnchor.constraint(equalTo: self.topAnchor),
             doctorInfoView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             doctorInfoView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             doctorInfoView.heightAnchor.constraint(equalToConstant: 108),
@@ -56,7 +57,8 @@ class DoctorCardHorizontalUIView: UIView {
             doctorImageView.heightAnchor.constraint(equalToConstant: 92),
             doctorImageView.widthAnchor.constraint(equalToConstant: 92),
             
-            doctorInfo.centerYAnchor.constraint(equalTo: doctorInfoView.centerYAnchor),
+            doctorInfo.centerYAnchor.constraint(equalTo: doctorImageView.centerYAnchor),
+            doctorInfo.leadingAnchor.constraint(equalTo: doctorImageView.trailingAnchor, constant: 16),
             doctorInfo.trailingAnchor.constraint(equalTo: doctorInfoView.trailingAnchor, constant: -8)
         ])
     }
