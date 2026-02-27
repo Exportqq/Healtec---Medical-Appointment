@@ -8,7 +8,7 @@ final class TopDoctorsCV: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 50, height: 108)
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
@@ -63,7 +63,7 @@ final class TopDoctorsCV: UIView {
 extension TopDoctorsCV: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return min(topDoctors.count, 2)
+        return min(topDoctors.count, 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

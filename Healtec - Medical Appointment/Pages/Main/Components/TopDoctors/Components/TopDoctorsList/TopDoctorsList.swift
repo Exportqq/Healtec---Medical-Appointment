@@ -6,7 +6,7 @@ final class TopDoctorsListCV: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 50, height: 108)
         layout.minimumLineSpacing = 15
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -36,7 +36,7 @@ final class TopDoctorsListCV: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)

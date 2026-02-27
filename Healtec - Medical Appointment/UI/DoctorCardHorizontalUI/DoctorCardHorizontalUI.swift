@@ -37,6 +37,7 @@ class DoctorCardHorizontalUIView: UIView {
     private func setupUI() {
         addSubview(doctorInfoView)
         doctorInfoView.addSubview(doctorImageView)
+        doctorInfoView.addSubview(doctorInfo)
     }
     
     private func setupConstrains() {
