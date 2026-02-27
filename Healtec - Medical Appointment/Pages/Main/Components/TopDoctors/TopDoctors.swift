@@ -1,10 +1,10 @@
 import UIKit
 
-final class DoctorsListTopCV: UIView {
+final class TopDoctorsCV: UIView {
     
     var onDoctorSelected: ((DoctorsModel) -> Void)?
     
-    private var doctors: [DoctorsModel] = []
+    private var topDoctors: [DoctorsModel] = []
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -14,7 +14,7 @@ final class DoctorsListTopCV: UIView {
         cv.backgroundColor = .white
         cv.dataSource = self
         cv.delegate = self
-        cv.register(DoctorsCell.self, forCellWithReuseIdentifier: "TopDoctorsCell")
+        cv.register(TopDoctorsCell.self, forCellWithReuseIdentifier: "TopDoctorsCell")
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
         return cv
@@ -49,7 +49,7 @@ final class DoctorsListTopCV: UIView {
         Task {
             do {
                 let doctor = try await DoctorsService().getDoctors()
-                self.doctors = doctor
+                self.topDoctors = doctor
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -60,25 +60,25 @@ final class DoctorsListTopCV: UIView {
     }
 }
 
-extension DoctorsListTopCV: UICollectionViewDataSource {
+extension TopDoctorsCV: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return min(doctors.count, 2)
+        return min(topDoctors.count, 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopDoctorsCell", for: indexPath) as? TopDoctorsCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: doctors[indexPath.item])
+        cell.configure(with: topDoctors[indexPath.item])
         return cell
     }
 }
 
-extension DoctorsListTopCV: UICollectionViewDelegate {
+extension TopDoctorsCV: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedDoctor = doctors[indexPath.item]
+        let selectedDoctor = topDoctors[indexPath.item]
         onDoctorSelected?(selectedDoctor)
     }
 }

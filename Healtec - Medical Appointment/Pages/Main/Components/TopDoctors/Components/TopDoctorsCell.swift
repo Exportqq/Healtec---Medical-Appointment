@@ -1,7 +1,7 @@
 import UIKit
 
 final class TopDoctorsCell: UICollectionViewCell {
-    private let card = DoctorCardHorizontalUIView()
+    private let card = DoctorCardUIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +22,7 @@ final class TopDoctorsCell: UICollectionViewCell {
         card.doctorInfo.doctorName.text = doctor.name
         card.doctorInfo.doctorSpeciality.text = doctor.specialty
         card.doctorInfo.doctorRaiting.text = "\(doctor.rating)"
-        card.doctorImageView.image = doctor.image
+        card.doctorImage.image = doctor.image
     }
 }
 

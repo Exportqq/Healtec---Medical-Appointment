@@ -4,7 +4,7 @@ final class TopDoctorsListCV: UIView {
     
     private var topDoctors: [DoctorsModel] = []
     
-    private lazy var collectionViewTopDoctors: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
         layout.minimumLineSpacing = 15
@@ -32,14 +32,14 @@ final class TopDoctorsListCV: UIView {
     
     private func setupView() {
         backgroundColor = .white
-        addSubview(collectionViewTopDoctors)
-        collectionViewTopDoctors.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionViewTopDoctors.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-            collectionViewTopDoctors.bottomAnchor.constraint(equalTo:  bottomAnchor),
-            collectionViewTopDoctors.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            collectionViewTopDoctors.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            collectionView.bottomAnchor.constraint(equalTo:  bottomAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
         ])
     }
     
@@ -49,7 +49,7 @@ final class TopDoctorsListCV: UIView {
                 let doctor = try await DoctorsService().getDoctors()
                 self.topDoctors = doctor
                 DispatchQueue.main.async {
-                    self.collectionViewTopDoctors.reloadData()
+                    self.collectionView.reloadData()
                 }
             } catch {
                 print("Ошибка загрузки данных:", error)

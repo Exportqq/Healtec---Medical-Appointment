@@ -56,7 +56,7 @@ class FavoriteDoctors: UIViewController {
     
     private let doctors = DoctorsListFavouriteCV()
     
-    private let topDoctors = DoctorsListTopCV()
+    private let topDoctors = TopDoctorsCV()
     
     override func viewDidLoad() {
         super.viewDidLoad()
