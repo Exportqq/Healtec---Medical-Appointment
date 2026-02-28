@@ -37,23 +37,6 @@ class FavoriteDoctors: UIViewController {
         return label
     }()
     
-    private let seeAllBtnTopDoctors: UIButton = {
-        let button = UIButton()
-        button.setTitle("See All", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Inter-Regular", size: 14)
-        button.setTitleColor(.borderClr, for: .normal)
-        return button
-    }()
-    
-    private lazy var mainStackTopDoctors: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleTopDoctors, seeAllBtnTopDoctors])
-        stack.axis = .horizontal
-        stack.spacing = 0
-        stack.distribution = .equalSpacing
-        stack.alignment = .top
-        return stack
-    }()
-    
     private let doctors = DoctorsListFavouriteCV()
     
     private let topDoctors = TopDoctorsCV()
@@ -70,7 +53,7 @@ class FavoriteDoctors: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(mainStack)
-        view.addSubview(mainStackTopDoctors)
+        view.addSubview(titleTopDoctors)
         view.addSubview(doctors)
         view.addSubview(topDoctors)
         view.addSubview(profileMain)
@@ -129,7 +112,7 @@ class FavoriteDoctors: UIViewController {
     }
     
     private func SetupConstraints() {
-        [profileMain, doctors, topDoctors, mainStack, mainStackTopDoctors].forEach{
+        [profileMain, doctors, topDoctors, mainStack, titleTopDoctors].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -149,12 +132,12 @@ class FavoriteDoctors: UIViewController {
             doctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             doctors.heightAnchor.constraint(equalToConstant: 205),
             
-            mainStackTopDoctors.topAnchor.constraint(equalTo: doctors.bottomAnchor, constant: 24),
-            mainStackTopDoctors.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            mainStackTopDoctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            mainStackTopDoctors.heightAnchor.constraint(equalToConstant: 24),
+            titleTopDoctors.topAnchor.constraint(equalTo: doctors.bottomAnchor, constant: 24),
+            titleTopDoctors.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            titleTopDoctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            titleTopDoctors.heightAnchor.constraint(equalToConstant: 24),
             
-            topDoctors.topAnchor.constraint(equalTo: mainStackTopDoctors.bottomAnchor, constant: 16),
+            topDoctors.topAnchor.constraint(equalTo: titleTopDoctors.bottomAnchor, constant: 16),
             topDoctors.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             topDoctors.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             topDoctors.heightAnchor.constraint(equalToConstant: 228),
