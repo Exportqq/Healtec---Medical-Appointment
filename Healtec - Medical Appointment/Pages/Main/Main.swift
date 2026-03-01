@@ -41,6 +41,8 @@ class FavoriteDoctors: UIViewController {
     
     private let topDoctors = TopDoctorsCV()
     
+    private let filters = Filters()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SetupView()
@@ -53,6 +55,7 @@ class FavoriteDoctors: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(mainStack)
+        view.addSubview(filters)
         view.addSubview(titleTopDoctors)
         view.addSubview(doctors)
         view.addSubview(topDoctors)
@@ -112,7 +115,7 @@ class FavoriteDoctors: UIViewController {
     }
     
     private func SetupConstraints() {
-        [profileMain, doctors, topDoctors, mainStack, titleTopDoctors].forEach{
+        [profileMain, doctors, topDoctors, mainStack, titleTopDoctors, filters].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -122,7 +125,11 @@ class FavoriteDoctors: UIViewController {
             profileMain.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             profileMain.heightAnchor.constraint(equalToConstant: 220),
             
-            mainStack.topAnchor.constraint(equalTo: profileMain.bottomAnchor, constant: 24),
+            filters.topAnchor.constraint(equalTo: profileMain.bottomAnchor, constant: 24),
+            filters.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            filters.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            
+            mainStack.topAnchor.constraint(equalTo: filters.bottomAnchor, constant: 24),
             mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             mainStack.heightAnchor.constraint(equalToConstant: 24),
