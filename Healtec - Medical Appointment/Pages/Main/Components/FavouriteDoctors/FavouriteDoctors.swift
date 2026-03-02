@@ -10,8 +10,6 @@ final class DoctorsListFavouriteCV: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
-        layout.minimumLineSpacing = 16
-        layout.minimumInteritemSpacing = 16
 
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
