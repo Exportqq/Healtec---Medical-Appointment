@@ -49,6 +49,10 @@ class FavoriteDoctors: UIViewController {
         SetupConstraints()
         setupActions()
         setupDoctorSelection()
+        
+        filters.onFilterSelected = { [weak self] filter in
+            self?.doctors.filterDoctors(by: filter)
+        }
     }
     
     private func SetupView() {
