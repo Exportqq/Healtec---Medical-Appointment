@@ -1,6 +1,9 @@
 import UIKit
 
 class RegisterVC: UIViewController {
+    
+    private let loadingView = LoadingView()
+    
     private let regBackground: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
@@ -83,12 +86,15 @@ class RegisterVC: UIViewController {
             
             Task {
                 do {
+                    self.showLoader()
+                    
                     let auth = try await AuthService.shared.register(
                         username: self.regUsername.text ?? "",
                         password: self.regPassord.text ?? "",
                         repeatPassword: self.regRepeatPassord.text ?? ""
                     )
                     
+                    self.hideLoader()
                     print("Успешно", auth.token)
                 } catch {
                     print("Ошибка регистрации")

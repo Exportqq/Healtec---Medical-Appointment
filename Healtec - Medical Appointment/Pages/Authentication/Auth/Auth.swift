@@ -85,11 +85,14 @@ class AuthVC: UIViewController {
             
             Task {
                 do {
+                    self.showLoader()
+                    
                     let auth = try await AuthService.shared.login (
                         username: self.authUsername.text ?? "",
                         password: self.authPassord.text ?? "",
                     )
                     
+                    self.hideLoader()
                     self.successLogin()
                     KeychainService.shared.saveToken(auth.token)
                     print("Успешно", auth.token)

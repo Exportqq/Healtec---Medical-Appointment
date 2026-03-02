@@ -57,6 +57,7 @@ class FavoriteDoctors: UIViewController {
     
     private func SetupView() {
         view.backgroundColor = .white
+
         
         view.addSubview(mainStack)
         view.addSubview(filters)
