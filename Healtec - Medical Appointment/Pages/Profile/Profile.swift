@@ -34,10 +34,14 @@ class ProfileVC: UIViewController {
     private func loadProfile() {
         Task {
             do {
+                self.showLoader()
+                
                 let profile = try await AuthService.shared.getProfile()
                 await MainActor.run {
                     self.profileItems.configure(username: profile.username)
                 }
+                
+                self.hideLoader()
             } catch {
                 print("Ошибка загрузки профиля:", error)
                 SessionManager.shared.logout()

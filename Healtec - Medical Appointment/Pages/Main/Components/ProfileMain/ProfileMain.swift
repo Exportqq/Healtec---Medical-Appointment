@@ -43,10 +43,11 @@ class ProfileMainView: UIView {
     
     private func loadProfile() {
         Task {
-            do {
+            do {                
                 let profile = try await AuthService.shared.getProfile()
                 await MainActor.run {
                     self.profileItemsMain.configure(username: profile.username)
+                    
                 }
             } catch {
                 print("Ошибка загрузки профиля:", error)
