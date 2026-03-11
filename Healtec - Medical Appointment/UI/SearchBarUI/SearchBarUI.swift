@@ -11,13 +11,19 @@ class SearchBarUI: UIView {
         return sb
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+    
+    init(searchDelegate: UISearchBarDelegate) {
+        super.init(frame: .zero)
+
+        searchBar.delegate = searchDelegate
         setupView()
         setupConstraints()
         customize()
-    }
-
+      }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

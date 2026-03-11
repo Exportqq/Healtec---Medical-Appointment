@@ -1,6 +1,12 @@
 import UIKit
 
+protocol ProfileMainViewOutput: AnyObject {
+    func searchText(_ text: String)
+}
+
 class ProfileMainView: UIView {
+    
+    weak var output: ProfileMainViewOutput?
     
     private let backgorund: UIView = {
         let view = UIView()
@@ -17,7 +23,7 @@ class ProfileMainView: UIView {
     
     private let profileItemsMain = ProfileItemsMainView()
     
-    private let searchBar = SearchBarUI()
+    private lazy var searchBar = SearchBarUI(searchDelegate: self)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,6 +46,8 @@ class ProfileMainView: UIView {
         backgorund.addSubview(profileItemsMain)
         backgorund.addSubview(searchBar)
     }
+    
+    
     
     private func loadProfile() {
         Task {
@@ -80,4 +88,46 @@ class ProfileMainView: UIView {
             
         ])
     }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension ProfileMainView: UISearchBarDelegate {
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+
+  }
+
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      
+      output?.searchText(searchText)
+      
+//    if searchText.isEmpty {
+//
+//    } else {
+//
+//    }
+//
+//    NSObject.cancelPreviousPerformRequests(withTarget: self,
+//                                           selector: #selector(self.reloadSearch(_:)),
+//                                           object: searchBar)
+//    perform(#selector(self.reloadSearch(_:)), with: searchBar, afterDelay: 0.75)
+  }
+
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+    searchBar.resignFirstResponder()
+  }
+
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.text = ""
+
+    searchBar.resignFirstResponder()
+  }
+
+  @objc private func reloadSearch(_ searchBar: UISearchBar) {
+    guard let text = searchBar.text else { return }
+    if text.count > 2 || text.count == 0 {
+
+    }
+  }
 }

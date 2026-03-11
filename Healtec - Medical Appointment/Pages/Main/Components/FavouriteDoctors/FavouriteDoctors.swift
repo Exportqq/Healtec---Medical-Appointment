@@ -6,7 +6,8 @@ final class DoctorsListFavouriteCV: UIView {
 
     private var allDoctors: [DoctorsModel] = []
     private var doctors: [DoctorsModel] = []      
-
+    private var filterDoctors: [DoctorsModel] = []
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 65) / 2, height: 205)
@@ -77,6 +78,17 @@ final class DoctorsListFavouriteCV: UIView {
             }
         }
         print("Отображаемые врачи:", doctors.map { $0.name })
+        collectionView.reloadData()
+    }
+    
+    func filterDoctorsByName(_ name: String) {
+        
+        if name.isEmpty {
+            doctors = allDoctors
+        } else {
+            doctors = allDoctors.filter { $0.name.lowercased().contains(name.lowercased())}
+        }
+        
         collectionView.reloadData()
     }
 }

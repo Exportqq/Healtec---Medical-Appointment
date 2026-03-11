@@ -53,6 +53,8 @@ class FavoriteDoctors: UIViewController {
         filters.onFilterSelected = { [weak self] filter in
             self?.doctors.filterDoctors(by: filter)
         }
+        
+        profileMain.output = self
     }
     
     private func SetupView() {
@@ -158,3 +160,8 @@ class FavoriteDoctors: UIViewController {
 }
 
 
+extension FavoriteDoctors: ProfileMainViewOutput {
+    func searchText(_ text: String) {
+        doctors.filterDoctorsByName(text)
+    }
+}
